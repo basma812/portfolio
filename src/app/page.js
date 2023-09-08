@@ -1,113 +1,164 @@
-import Image from 'next/image'
+"use client";
+
+import Head from "next/head";
+import { AiFillInstagram, AiFillLinkedin } from "react-icons/ai";
+import { IoIosMoon } from "react-icons/io";
+import { useState } from "react";
+import Image from "next/legacy/image";
+import deved from "/public/ladywithwirelessheadset.png";
+import design from "/public/desgining.png";
+import code from "/public/code.png";
+import experiness from "/public/experiness.png";
+import weather from "/public/weatheringWithYou.png";
+import prase from "/public/praseJournal.png";
 
 export default function Home() {
+  const [darkMode, setDarkMode] = useState(false);
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className={darkMode ? "dark" : ""}>
+      <Head>
+        <title>Basma Abdulahad Portfolio</title>
+        <meta name="description" content="Portfolio" />
+        <link rel="icon" href="/favicon.ico" /> 
+      </Head>
+      <main className="bg-white px-2 dark:bg-gray-900 md:px-10 lg:px-20">
+        <div className="flex justify-center">
+          <section className="justify-center max-w-7xl dark:max-w-7xl">
+            <nav className="py-10 mb-8 max-w-7xl dark:text-white">
+
+                  <IoIosMoon
+                    className=" cursor-pointer float-right text-4xl sm:text-2xl xs:text-xl bg-gradient-to-r from-violet-300 text- to-pink-300 text-black dark:text-white px-1 py-1 border-none rounded-md ml-8 "
+                    onClick={() => setDarkMode(!darkMode)}
+                  />
+            </nav>
+            <div className="text-center">
+              <h2 className="text-5xl py-2 text-violet-500 font-medium dark:text-pink-400 md:text-6xl">
+                Basma Abdulahad
+              </h2>
+              <h3 className="text-2xl py-2 dark:text-white md:text-3xl">
+                Frontend Developer and UI Designer.
+              </h3>
+              <p className="text-md py-5 leading-8 text-gray-800 dark:text-gray-200 max-w-xl mx-auto md:text-xl">
+                I have cultivated a proficiency in Front-End development. My
+                fervor lies in crafting aesthetically pleasing designs while
+                ensuring their seamless integration into responsive and
+                user-centric websites that align with client expectations.
+              </p>
+            </div>
+            <div className="mx-auto bg-gradient-to-r from-violet-300 text- to-pink-300 rounded-full w-80 h-80 relative overflow-hidden mt-10 xs:w-52 xs:h-52 md:h-96 md:w-96">
+              <Image src={deved} layout="fill" objectFit="cover" alt="deved"/>
+            </div>
+            <div className="text-center w-full p-4 py-4 mt-10 ">
+              <h3 className="text-3xl py-2 dark:text-white max-w-xl mx-auto md:text-xl lg:text-3xl lg:max-w-xl">
+                Work experience
+              </h3>
+              <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200 max-w-xl mx-auto lg:text-xl">
+                Since the beginning of my creear I design and developer, I've
+                done remote work for
+                <span className="text-violet-500 font-medium dark:text-pink-400">
+                  {" "}
+                  CTEK{" "}
+                </span>
+                consulted for{" "}
+                <span className="text-violet-500 font-medium dark:text-pink-400">
+                  {" "}
+                  SKILL{" "}
+                </span>
+                and collaborated with talanted people to create digital products
+                for both business and consumer use.
+              </p>
+              <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200 max-w-xl mx-auto lg:text-xl">
+                These are the most languages and tools that I use :
+              </p>
+            </div>
+            <div className="lg:flex gap-4">
+              <div className="text-center shadow-lg p-10 rounded-xl my-10 bg-white dark:bg-DriedLavender flex-1">
+                <Image class="mx-auto" src={code} width={200} height={200} alt="coding"/>
+                <h3 className="text-lg font-medium pt-8 pb-2 ">Coding</h3>
+                <p className="text-gray-800 py-1">HTML/CSS & JavaScript</p>
+                <p className="text-gray-800 py-1">C#, Tailwind CSS</p>
+                <p className="text-gray-800 py-1">Python, jQuery</p>
+              </div>
+
+              <div className="text-center shadow-lg p-10 rounded-xl my-10 mb-12 bg-white dark:bg-DriedLavender flex-1">
+                <Image
+                  class="mx-auto"
+                  src={experiness}
+                  width={200}
+                  height={200}
+                  alt="experiness"
+                />
+                <h3 className="text-lg font-medium pt-8 pb-2 ">Framework</h3>
+                <p className="text-gray-800 py-1">Angular </p>
+                <p className="text-gray-800 py-1">.NET</p>
+                <p className="text-gray-800 py-1">React.js</p>
+              </div>
+
+              <div className="text-center shadow-lg p-10 rounded-xl my-10  bg-white dark:bg+-*96--DriedLavender flex-1">
+                <Image class="mx-auto" src={design} width={200} height={200} alt="Designing"/>
+                <h3 className="text-lg font-medium pt-8 pb-2  ">Designing</h3>
+
+                <p className="text-gray-800 py-1">Figma</p>
+                <p className="text-gray-800 py-1">Blender</p>
+              </div>
+            </div>
+            <div>
+              <h3 className="text-3xl py-1 dark:text-white ">Mockups</h3>
+            </div>
+            <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
+              <div className="basis-1/3 flex-1 ">
+                <Image
+                  className="rounded-lg object-cover"
+                  width={"100"}
+                  height={"100"}
+                  layout="responsive"
+                  src={weather}
+                  alt="weather"
+                />
+              </div>
+              <div className="basis-1/3 flex-1">
+                <Image
+                  className="rounded-lg object-cover"
+                  width={"100"}
+                  height={"100"}
+                  layout="responsive"
+                  src={prase}
+                  alt="prase"
+                />
+              </div>
+            </div>
+            <div className="">
+              <h3 className="text-l py-2 dark:text-white md:text-xl xs:text-sm">
+                This page was made with Next.js, React.js and Tailwind CSS.
+              </h3>
+              <h3 className="text-l py-2 dark:text-white md:text-xl xs:text-sm">
+              All copyright reserved by Basma Abdulahad.
+              </h3>
+            </div>
+            <footer className="py-4 dark:text-white">
+               <ul className="flex">
+                <li>
+                  <a
+                    className="text-3xl flex justify-center sm:text-2xl xs:text-xl bg-gradient-to-r from-violet-300 text- to-pink-300 text-white dark:text-black px-1 py-1 border-none rounded-md ml-2"
+                    href="https://www.linkedin.com/in/basma-abdulahad/"
+                  >
+                    <AiFillLinkedin />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="text-3xl flex justify-center sm:text-2xl xs:text-xl bg-gradient-to-r from-violet-300 text- to-pink-300 text-white dark:text-black px-1 py-1 border-none rounded-md ml-4"
+                    href="https://www.instagram.com/8ui12ux/"
+                  >
+                    <AiFillInstagram />
+                  </a>
+                </li>
+              </ul>
+            </footer>
+          </section>
         </div>
-      </div>
+      </main>
+    </div>
+  );
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
 }
